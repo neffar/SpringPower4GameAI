@@ -1,3 +1,7 @@
+HELP.md
+mvnw
+mvnw.cmd
+target/
 # Compiled class file
 *.class
 
