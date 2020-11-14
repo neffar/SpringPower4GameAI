@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<th:block th:fragment="resultFragment">
+    <table class="table text-center">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">
+                <button id="col_1" class="btn btn-info" type="button" onclick="clickOnCol('0')">Col #1
+                </button>
+            </th>
+            <th scope="col">
+                <button id="col_2" class="btn btn-info" type="button" onclick="clickOnCol('1')">Col #2
+                </button>
+            </th>
+            <th scope="col">
+                <button id="col_3" class="btn btn-info" type="button" onclick="clickOnCol('2')">Col #3
+                </button>
+            </th>
+            <th scope="col">
+                <button id="col_4" class="btn btn-info" type="button" onclick="clickOnCol('3')">Col #4
+                </button>
+            </th>
+            <th scope="col">
+                <button id="col_5" class="btn btn-info" type="button" onclick="clickOnCol('4')">Col #5
+                </button>
+            </th>
+            <th scope="col">
+                <button id="col_6" class="btn btn-info" type="button" onclick="clickOnCol('5')">Col #6
+                </button>
+            </th>
+            <th scope="col">
+                <button id="col_7" class="btn btn-info" type="button" onclick="clickOnCol('6')">Col #7
+                </button>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr>
+            <td th:each="element : ${matrix[0]}">
+                <i th:if="${element == 0}" class="fas fa-circle fa-3x" style="color: white"></i>
+                <i th:if="${element == 1}" class="fas fa-circle fa-3x" style="color: yellow"></i>
+                <i th:if="${element == 2}" class="fas fa-circle fa-3x" style="color: red"></i>
+            </td>
+        </tr>
+        <tr>
+            <td th:each="element : ${matrix[1]}">
+                <i th:if="${element == 0}" class="fas fa-circle fa-3x" style="color: white"></i>
+                <i th:if="${element == 1}" class="fas fa-circle fa-3x" style="color: yellow"></i>
+                <i th:if="${element == 2}" class="fas fa-circle fa-3x" style="color: red"></i>
+            </td>
+        </tr>
+        <tr>
+            <td th:each="element : ${matrix[2]}">
+                <i th:if="${element == 0}" class="fas fa-circle fa-3x" style="color: white"></i>
+                <i th:if="${element == 1}" class="fas fa-circle fa-3x" style="color: yellow"></i>
+                <i th:if="${element == 2}" class="fas fa-circle fa-3x" style="color: red"></i>
+            </td>
+        </tr>
+        <tr>
+            <td th:each="element : ${matrix[3]}">
+                <i th:if="${element == 0}" class="fas fa-circle fa-3x" style="color: white"></i>
+                <i th:if="${element == 1}" class="fas fa-circle fa-3x" style="color: yellow"></i>
+                <i th:if="${element == 2}" class="fas fa-circle fa-3x" style="color: red"></i>
+            </td>
+        </tr>
+        <tr>
+            <td th:each="element : ${matrix[4]}">
+                <i th:if="${element == 0}" class="fas fa-circle fa-3x" style="color: white"></i>
+                <i th:if="${element == 1}" class="fas fa-circle fa-3x" style="color: yellow"></i>
+                <i th:if="${element == 2}" class="fas fa-circle fa-3x" style="color: red"></i>
+            </td>
+        </tr>
+        <tr>
+            <td th:each="element : ${matrix[5]}">
+                <i th:if="${element == 0}" class="fas fa-circle fa-3x" style="color: white"></i>
+                <i th:if="${element == 1}" class="fas fa-circle fa-3x" style="color: yellow"></i>
+                <i th:if="${element == 2}" class="fas fa-circle fa-3x" style="color: red"></i>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+    <script th:inline="javascript">
+        $(document).ready(() => {
+
+            let status = [[${gameOver}]];
+            if (status !== null) {
+                alert(status + ' gagné ;)')
+                window.location.href = "/";
+            }
+
+        })
+
+    </script>
+</th:block>
+</body>
+
+</html>
